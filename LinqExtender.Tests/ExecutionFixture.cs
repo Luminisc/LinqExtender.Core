@@ -1,7 +1,8 @@
-﻿using System;
+﻿using NUnit.Framework;
+using NUnit.Framework.Legacy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using NUnit.Framework;
 using System.Linq.Expressions;
 
 namespace LinqExtender.Tests
@@ -16,7 +17,7 @@ namespace LinqExtender.Tests
                         where book.Id == 2
                         select book;
 
-            Assert.AreEqual(2, query.First().Id);
+            ClassicAssert.AreEqual(2, query.First().Id);
         }
 
         [Test]
@@ -25,8 +26,8 @@ namespace LinqExtender.Tests
             var query = new FakeContext(GetBooks())
                 .Where(book => book.Id == 2)
                 .Select(r => new { r.Id, r.Title });
-       
-            Assert.AreEqual(2, query.First().Id);
+
+            ClassicAssert.AreEqual(2, query.First().Id);
         }
 
         [Test]
@@ -36,7 +37,7 @@ namespace LinqExtender.Tests
                         where book.Id == 2
                         select book).Take(1).Skip(0);
 
-            Assert.AreEqual(2, query.First().Id);
+            ClassicAssert.AreEqual(2, query.First().Id);
         }
 
         [Test]
@@ -45,7 +46,7 @@ namespace LinqExtender.Tests
             var expected = (from book in new FakeContext(GetBooks())select book).Skip(1).Take(1).ToArray();
             var actual = (from book in new FakeContext(GetBooks()) select book).ToArray();
 
-            Assert.AreNotEqual(expected.Count(), actual.Count());
+            ClassicAssert.AreNotEqual(expected.Count(), actual.Count());
         }
 
         internal class FakeContext : ExpressionVisitor,  IQueryContext<Book>
