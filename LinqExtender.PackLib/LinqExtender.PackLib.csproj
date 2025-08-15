@@ -1,15 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
+    <PostBuildEvent>"$(SolutionDir)Tools\NuGet.exe" pack "LinqExtender.nuspec"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LinqExtender\LinqExtender.csproj" />
   </ItemGroup>
@@ -19,7 +16,4 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)Tools\NuGet.exe" pack "LinqExtender.nuspec"</PostBuildEvent>
-  </PropertyGroup>
 </Project>

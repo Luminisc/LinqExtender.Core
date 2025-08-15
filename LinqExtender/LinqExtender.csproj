@@ -1,10 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
+    <PackageReference Include="System.Reflection.Emit.ILGeneration" Version="4.7.0" />
+  </ItemGroup>
   <!-- <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\Net35\</OutputPath>
     <DocumentationFile>bin\Debug\Net35\LinqExtender.XML</DocumentationFile>

@@ -28,7 +28,7 @@ namespace LinqExtender
         public IClassGenerator BuildDynamicAssembly()
         {
             AssemblyName assemblyName = new AssemblyName("ExtenderProxy");
-            AssemblyBuilder createdAssembly =  AppDomain.CurrentDomain.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Run);
+            AssemblyBuilder createdAssembly = AssemblyBuilder.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Run);
             // define module
             this.moduleBuilder = createdAssembly.DefineDynamicModule(assemblyName.Name);
 
@@ -172,7 +172,7 @@ namespace LinqExtender
             }
             else
             {
-                reflectedType = this.typeBuilder.CreateType();
+                reflectedType = this.typeBuilder.CreateTypeInfo();
                 isTypeCreated = true;
             }
 

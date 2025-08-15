@@ -1,7 +1,4 @@
 ﻿using NUnit.Framework;
-using NUnit.Framework.Legacy;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -21,7 +18,7 @@ namespace LinqExtender.Tests
 
             query.Count();
 
-            ClassicAssert.AreEqual(Expected(), Source(builder));
+            Assert.AreEqual(Expected(), Source(builder));
         }
 
         [Test]
@@ -36,7 +33,7 @@ namespace LinqExtender.Tests
 
             query.Count();
 
-            ClassicAssert.AreEqual(Expected(), Source(builder));
+            Assert.AreEqual(Expected(), Source(builder));
         }
     }
 }

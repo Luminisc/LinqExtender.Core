@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using NUnit.Framework.Legacy;
 using System;
 using System.Linq;
 using System.Text;
@@ -20,7 +19,7 @@ namespace LinqExtender.Tests
 
             query.Count();
 
-            ClassicAssert.AreEqual(Expected(), Source(builder));
+            Assert.AreEqual(Expected(), Source(builder));
         }
 
         [Test]
@@ -35,7 +34,7 @@ namespace LinqExtender.Tests
 
             query.Count();
 
-            ClassicAssert.AreEqual(Expected(), Source(builder));
+            Assert.AreEqual(Expected(), Source(builder));
         }
 
         [Test]
@@ -51,7 +50,7 @@ namespace LinqExtender.Tests
 
             query.Count();
 
-            ClassicAssert.AreEqual(Expected(), Source(builder));
+            Assert.AreEqual(Expected(), Source(builder));
 
         }
 
@@ -69,7 +68,7 @@ namespace LinqExtender.Tests
 
             query.Count();
 
-            ClassicAssert.AreEqual(Expected(), Source(builder));
+            Assert.AreEqual(Expected(), Source(builder));
         }
 
         [Test]
@@ -85,7 +84,7 @@ namespace LinqExtender.Tests
 
             query.Count();
 
-            ClassicAssert.AreEqual(Expected(), Source(builder));
+            Assert.AreEqual(Expected(), Source(builder));
         }
 
         [Test]
@@ -101,7 +100,7 @@ namespace LinqExtender.Tests
 
             query.Count();
 
-            ClassicAssert.AreEqual(Expected(), Source(builder));
+            Assert.AreEqual(Expected(), Source(builder));
         }
 
         [Test]
@@ -116,7 +115,7 @@ namespace LinqExtender.Tests
 
             query.Count();
 
-            ClassicAssert.AreEqual(Expected(), Source(builder));
+            Assert.AreEqual(Expected(), Source(builder));
         }
 
         [Test]
@@ -131,7 +130,7 @@ namespace LinqExtender.Tests
 
             query.Count();
 
-            ClassicAssert.AreEqual(Expected(), Source(builder));
+            Assert.AreEqual(Expected(), Source(builder));
         }
 
         [Test]
@@ -146,7 +145,7 @@ namespace LinqExtender.Tests
 
             query.Count();
 
-            ClassicAssert.AreEqual(Expected(), Source(builder));
+            Assert.AreEqual(Expected(), Source(builder));
         }
 
         [Test]
@@ -159,7 +158,7 @@ namespace LinqExtender.Tests
 
             query.FirstOrDefault();
 
-            ClassicAssert.AreEqual(Expected(), Source(builder));
+            Assert.AreEqual(Expected(), Source(builder));
         }
 
         [Test]
@@ -175,7 +174,7 @@ namespace LinqExtender.Tests
 
             query.FirstOrDefault();
 
-            ClassicAssert.AreEqual(Expected(), Source(builder));
+            Assert.AreEqual(Expected(), Source(builder));
         }
 
         // Fake method to test the capability of using
